@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.2;</TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">net472;$(TargetFrameworks)</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <OutputPath>..\Build</OutputPath>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
+
 </Project>

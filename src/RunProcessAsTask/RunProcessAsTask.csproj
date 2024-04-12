@@ -1,21 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netstandard1.4;netstandard2.0;</TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">net45;$(TargetFrameworks)</TargetFrameworks>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Authors>James Manning, Max Cheetham and Eamon Nerbonne</Authors>
     <Description>
       Simple wrapper around System.Diagnostics.Process to expose it as a System.Threading.Tasks.Task&lt;ProcessResults&gt;
 
       Includes support for cancellation, timeout (via cancellation), and exposes the standard output, standard error, exit code, and run time of the process.
     </Description>
-    <Version>1.2.4</Version>
+    <Version>2.0.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/jamesmanning/RunProcessAsTask/</PackageProjectUrl>
     <PackageReleaseNotes>Add support for passing in external lists for stdout/stderr collecting, fix corner case for processes that complete too quickly</PackageReleaseNotes>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.4'">
-    <PackageReference Include="System.Diagnostics.Process" Version="4.3.0" />
+
+  <ItemGroup>
+    <Using Include="System.Diagnostics"></Using>
   </ItemGroup>
+
 </Project>
